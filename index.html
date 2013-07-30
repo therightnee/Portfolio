@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>James Nee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div id="content">
+      <div id="link">
+        <a href=""><span>James Nee</span><a>
+        <a href="">Contact</a> 
+        <a href="">Resume</a>
+        <a href="">Blog</a>
+      </div>
+      <div id="pane">
+        <div id="images">
+          <img src="./img/portrait.jpg"></img>
+        </div>
+        <div id="description">
+          <h1>Hello, World!</h1>
+          <div style="padding-left:30px">
+            <span> My name is James Nee.<br />
+             I love building things, especially to improve lives.<br />
+             Below you will find a few of my favorite projects.<br />
+             Enjoy!
+           </span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div id="shell">
+        <ul class="thumbnails" id="holder"></ul>
+      </div>
+  </div>
+    <script src="js/data.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    //This function generates the thumbnails
+    function repeat(data) {
+    $("#holder").append(
+        "<li class='span3' id='limiter'>" +
+        "<div class='thumbnail'>" +
+        "<img src="+ data.image_source + ">" + //Pictures are intended to be formatted to 800px wide
+        "<h3>"+ data.title +"</h3>" +
+        "<p>" + data.caption + "</p>" +
+        "<p><a class='btn btn-primary' href='javascript:void(0)' onclick=" + data.function_name + ">" + data.link_title + "</a>" +
+        //"<a class='btn' href=" + second_link_location + ">" + second_link_title + "</a></p>" +
+        "</div" +
+        "</li>"
+        );
+    };
+
+
+    function fill(info) {
+      //This is borrowed from Ivan Lazarevic's '4 Line Image gallery with JQery'
+      //This generates the gallery layout
+      $("#images").empty().append(
+        '<div id="panel">' +
+          '<img id="largeImage" src=' + info.link1 + ' />' +
+          '<div id="img_text">' + info.description1 + '</div>' +
+        '</div>' + 
+        '<div id="thumbs">' + 
+            '<img src=' + info.link1 + ' alt=' + info.description1 + ' />' + 
+            '<img src=' + info.link2 + ' alt=' + info.description2 + ' />' + 
+            '<img src=' + info.link3 + ' alt=' + info.description3 + ' />' + 
+            '<img src=' + info.link4 + ' alt=' + info.description4 + ' />' + 
+        '</div>'
+      );
+
+      //This adds the descriptive text
+      $("#description").empty().append(
+        '<h1>' + info.heading + '</h1>' +
+        '<p>' + info.main_body + '</p>'
+        );
+
+      //This will change the large image
+      $('#thumbs').delegate('img','click', function(){
+        $('#largeImage').attr('src',$(this).attr('src'));
+        $('#img_text').html($(this).attr('alt'));
+      });
+    };
+
+    //Resize the <div> that contains the thumbnails for more even presentation
+
+    function resize() {
+      //$("#content").html(window.innerWidth + "<br />" + $("#holder").width())
+      if (window.innerWidth <= 1400) {
+        $("#shell").width(960);
+      }
+      if (window.innerWidth <= 1750 && window.innerWidth > 1400) {
+        $("#shell").width(1275);
+      }
+      if (window.innerWidth > 1750 && window.innerWidth <= 2160) {
+        $("#shell").width(1592.5);
+      }
+      if (window.innerWidth > 2160 ) {
+        $("#shell").width(1907.5);
+      }
+    };
+
+    //Check the <div> width on every resize
+    window.onresize = resize;
+
+    //Initialize the code
+    $(document).ready(function(){
+      resize();
+      for (var i=0;i<items.length;i++) {
+        repeat(items[i]);
+      };
+    });
+
+    </script>
+  </body>
+</html>
