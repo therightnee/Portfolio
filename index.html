@@ -11,8 +11,6 @@
     <link href="css/main.css" rel="stylesheet" media="screen">
   </head>
   <body>
-  <div class="container-fluid">
-    <div id="content">
       <div id="link">
         <a href=""><span>James Nee</span><a>
         <a href="">Contact</a> 
@@ -34,11 +32,9 @@
           </div>
         </div>
       </div>
-    </div>
       <div id="shell">
         <ul class="thumbnails" id="holder"></ul>
       </div>
-  </div>
     <script src="js/data.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -46,12 +42,12 @@
     //This function generates the thumbnails
     function repeat(data) {
     $("#holder").append(
-        "<li class='span3' id='limiter'>" +
+        "<li class='span4' id='tab'>" +
         "<div class='thumbnail'>" +
         "<img src="+ data.image_source + ">" + //Pictures are intended to be formatted to 800px wide
         "<h3>"+ data.title +"</h3>" +
         "<p>" + data.caption + "</p>" +
-        "<p><a class='btn btn-primary' href='javascript:void(0)' onclick=" + data.function_name + ">" + data.link_title + "</a>" +
+        "<p><a class='btn btn-primary' href='index.html#link' onclick=" + data.function_name + ">" + data.link_title + "</a>" +
         //"<a class='btn' href=" + second_link_location + ">" + second_link_title + "</a></p>" +
         "</div" +
         "</li>"

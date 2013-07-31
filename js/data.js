@@ -65,4 +65,4 @@ var VT_REU_data = new filler(
 		"THIS IS A TEST"
 	);
 
-var items  = [rebang, VT_REU, rebang, VT_REU]; //fill array with list of JSON DB's
+var items  = [rebang, VT_REU, rebang, VT_REU, rebang ]; //fill array with list of JSON DB's
