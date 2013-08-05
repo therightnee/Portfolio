@@ -23,9 +23,9 @@
         </div>
         <div id="description">
           <h1>Hello, World!</h1>
-          <div style="padding-left:30px">
+          <div>
             <span> My name is James Nee.<br />
-             I love building things, especially to improve lives.<br />
+             I love building things that enrich lives.<br />
              Below you will find a few of my favorite projects.<br />
              Enjoy!
            </span>
@@ -47,9 +47,9 @@
         "<img src="+ data.image_source + ">" + //Pictures are intended to be formatted to 800px wide
         "<h3>"+ data.title +"</h3>" +
         "<p>" + data.caption + "</p>" +
-        "<p><a class='btn btn-primary' href='index.html#link' onclick=" + data.function_name + ">" + data.link_title + "</a>" +
+        "<p><a class='btn btn-primary' href=" + data.link_location + " onclick=" + data.function_name + ">" + data.link_title +"</a>" +
         //"<a class='btn' href=" + second_link_location + ">" + second_link_title + "</a></p>" +
-        "</div" +
+        "</div>" +
         "</li>"
         );
     };
@@ -59,15 +59,15 @@
       //This is borrowed from Ivan Lazarevic's '4 Line Image gallery with JQery'
       //This generates the gallery layout
       $("#images").empty().append(
-        '<div id="panel">' +
+        '<div id="overall" >' +
           '<img id="largeImage" src=' + info.link1 + ' />' +
-          '<div id="img_text">' + info.description1 + '</div>' +
+          '<div id="img_text">' + info.description1.substr(1, info.description1.length-2) + '</div>' +
         '</div>' + 
         '<div id="thumbs">' + 
-            '<img src=' + info.link1 + ' alt=' + info.description1 + ' />' + 
-            '<img src=' + info.link2 + ' alt=' + info.description2 + ' />' + 
-            '<img src=' + info.link3 + ' alt=' + info.description3 + ' />' + 
-            '<img src=' + info.link4 + ' alt=' + info.description4 + ' />' + 
+            '<img src=' + info.link1 + ' title=' + info.description1 + ' />' + 
+            '<img src=' + info.link2 + ' title=' + info.description2 + ' />' + 
+            '<img src=' + info.link3 + ' title=' + info.description3 + ' />' + 
+            '<img src=' + info.link4 + ' title=' + info.description4 + ' />' + 
         '</div>'
       );
 
@@ -80,7 +80,7 @@
       //This will change the large image
       $('#thumbs').delegate('img','click', function(){
         $('#largeImage').attr('src',$(this).attr('src'));
-        $('#img_text').html($(this).attr('alt'));
+        $('#img_text').html($(this).attr('title'));
       });
     };
 
