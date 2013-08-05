@@ -13,9 +13,9 @@
   <body>
       <div id="link">
         <a href=""><span>James Nee</span><a>
-        <a href="">Contact</a> 
-        <a href="">Resume</a>
-        <a href="">Blog</a>
+        <a href="javascript:void(0)" onclick="contact()">Contact</a>
+        <a href="Nee_James_Resume.pdf" target="_blank">Resume</a>
+        <a href="http://dev.anamnesis.gotpantheon.com/" target="_blank">Blog</a>
       </div>
       <div id="pane">
         <div id="images">
@@ -39,6 +39,17 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
+    //This function fills out the contact information
+    function contact() {
+      $("#description").empty().append(
+        '<h1>' + 'Contact' + '</h1>' + '<br />' +
+        '<p style="font-size: 28px;">' + 'E-mail: <a href="mailto: james.nee@students.olin.edu">james.nee@students.olin.edu</a>' + '</p>' + '<br />' +
+        '<a href="http://www.linkedin.com/pub/james-nee/57/915/926">' +      
+          '<img src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.png "width="160" height="33" border="0" alt="View my profile on LinkedIn">'+
+        '</a>'
+        );
+    };
+
     //This function generates the thumbnails
     function repeat(data) {
     $("#holder").append(
@@ -47,7 +58,7 @@
         "<img src="+ data.image_source + ">" + //Pictures are intended to be formatted to 800px wide
         "<h3>"+ data.title +"</h3>" +
         "<p>" + data.caption + "</p>" +
-        "<p><a class='btn btn-primary' href=" + data.link_location + " onclick=" + data.function_name + ">" + data.link_title +"</a>" +
+        "<p><a class='btn btn-primary' id='button' href=" + data.link_location + " onclick=" + data.function_name + ">" + data.link_title +"</a>" +
         //"<a class='btn' href=" + second_link_location + ">" + second_link_title + "</a></p>" +
         "</div>" +
         "</li>"

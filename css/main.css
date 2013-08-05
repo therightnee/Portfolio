@@ -3,16 +3,20 @@ html {
 	overflow: auto;
 }
 
-body
-{
+body{
 background-image:url('../img/office/office.png');
 background-color:#cccccc;
 } 
+
+a{
+	outline: 0px;
+}
 
 #link{
 	width: 100%;
 	font-family: 'Pathway Gothic One';
 	line-height: 50px;
+	color: #2980b9;
 }
 
 	#link span{
@@ -31,6 +35,23 @@ background-color:#cccccc;
 		font-size: 45px;
 		margin: 15px;
 	}
+
+	#link a:visited {
+		text-decoration:none;
+		color: #2980b9;
+	}
+
+	#link a:active {
+		text-decoration:none;
+		color: #2980b9;
+	}
+
+	#link a:focus {
+		outline: 0px;
+		text-decoration:none;
+		color: #2980b9;
+	}
+
 
 #content {
 	color: #ffffff;
@@ -133,3 +154,6 @@ background-color:#cccccc;
 	height: 400px;
 }
 
+#button{
+	outline: 0px;
+}
