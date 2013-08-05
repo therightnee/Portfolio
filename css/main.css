@@ -69,7 +69,10 @@ a{
 	padding-top: 20px;
 	margin: 0px auto;
 	width: 80%;
-	height: 600px;
+	height: 550px;
+	background-color: #dddddd;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
 
 	#images {
@@ -84,7 +87,7 @@ a{
 		width: 45%;
 		height: 100%;
 		float: left;
-		color: #ffffff;
+		color: #000000;
 	}
 
 		#description p {
@@ -134,9 +137,6 @@ a{
 #shell {
 	margin: 0px auto 30px auto;
 	padding: 20px 0px 0px 0px;
-	background-color: #ecf0f1;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
 }
 
 #holder {
@@ -149,6 +149,8 @@ a{
 	margin-left: 15px;
 	background-color: #ffffff;
 }
+
+/*slight fixes to bootstrap.css*/
 
 .thumbnail{
 	height: 400px;
