@@ -91,7 +91,7 @@ var NewsReader = new entry(
 		"./img/rss_logo.jpg",
 		"javascript:void(0)",
 		"See it!",
-		"'../RainbowReader/index.php#current=news' target=_blank"
+		"'./RainbowReader/index.php#current=news' target=_blank"
 	);
 
 var IMEC = new entry(
