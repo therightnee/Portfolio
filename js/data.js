@@ -35,7 +35,7 @@ var rebang_data = new filler(
 		"'An early prototype to test the joining mechanism.'",
 		"./img/RE!/classAB.jpg",
 		"'Our first Class AB amplifier.'",
-		"./img/RE!/board.png",
+		"./img/RE!/board.jpg",
 		"'Design for a Class D amplifier.'",
 		"./img/RE!/classDAmp.jpg",
 		"'The assembled, but not functional, Class D amplifier.'",
@@ -63,11 +63,11 @@ var VT_REU = new entry(
 	);
 
 var VT_REU_data = new filler(
-		"./img/VT_REU/middle.png",
-		"'An early iteration of the platform.'",
-		"./img/VT_REU/final.png",
+		"./img/VT_REU/first.jpg",
+		"'The first iteration of the platform.'",
+		"./img/VT_REU/final.jpg",
 		"'The final design.'",
-		"./img/VT_REU/breakout.png",
+		"./img/VT_REU/breakout.jpg",
 		"'Breakout for the ADXL103 chip.'",
 		"./img/VT_REU/sensor.jpg",
 		"'Fully assembled sensor board.'",
@@ -88,7 +88,7 @@ var NewsReader = new entry(
 		"I decided to write my own because I found it more efficient to \
 		 see all the headlines at once, instead of having to scroll through a \
 		 long list.",
-		"./img/Rainbow_Reader.jpg",
+		"./img/rss_logo.jpg",
 		"javascript:void(0)",
 		"See it!",
 		"'../RainbowReader/index.php#current=news' target=_blank"
